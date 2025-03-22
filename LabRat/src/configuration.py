@@ -1,0 +1,2 @@
+OVERVIEW_FILE_NAME = "Overview-results.txt"
+OVERVIEW_FORMULAS = ["AVERAGE", "STDEV"]
