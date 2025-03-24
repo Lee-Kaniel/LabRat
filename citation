@@ -1,1 +1,6 @@
-CITATION.cff
+message: "If you use this repository in your work, please cite it as follows."
+authors:
+  - name: "Lee Kaniel"
+title: "LabRat"
+date-released: "2024-03-22"
+url: https://github.com/Lee-Kaniel/LabRat
