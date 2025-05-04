@@ -5,6 +5,10 @@ from LabRat.src.schemas.overview_table import OverviewTable
 
 
 class BaseDataFilter(ABC):
+    """
+    Abstract base class for all data filters. Defines the required interface for any filter class
+    that processes contraction data (e.g., amplitude-based or rhythm-based filters).
+    """
     def __init__(self, pre_filter_excel_file_name: str = None, post_filter_excel_file_name: str = None):
         self.pre_filter_excel_file_name = pre_filter_excel_file_name
         self.post_filter_excel_file_name = post_filter_excel_file_name
