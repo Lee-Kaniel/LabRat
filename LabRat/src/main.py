@@ -21,7 +21,11 @@ RED = '\033[91m'
 
 def print_help() -> None:
     """
-        Print help information.
+    Prints a comprehensive help menu that explains:
+    - The usage of the application
+    - Expected file structure
+    - Outputs generated
+    - Customization options for filters and formulas
     """
     print(BOLD + DARK_YELLOW + "----------------------------------------------" + RESET)
     print(BOLD + DARK_YELLOW + "--- LabRat Usage" + RESET)
