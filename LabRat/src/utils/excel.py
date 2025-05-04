@@ -2,6 +2,12 @@ import re
 
 
 def serialize_excel_title(input_string):
+    """
+    Cleans and formats a string to make it safe for use as an Excel title or table name.
+    - Removes special characters that are invalid in Excel.
+    - Replaces spaces with underscores.
+    - Prepends an underscore if the name starts with a digit.
+    """
     # Replace or remove invalid characters
     clean_string = re.sub(r'[\\/:*?"<>|\[\]]+', '', input_string)  # Remove special characters
     clean_string = clean_string.replace(' ', '_')  # Replace spaces with underscores for table names
@@ -18,6 +24,11 @@ def serialize_excel_title(input_string):
 
 
 def serialize_excel_worksheet_name(input_string):
+    """
+    Cleans and formats a string for use as an Excel worksheet name.
+    - Removes Excel-invalid characters.
+    - Trims the name to 31 characters (Excel limit).
+    """
     # Replace or remove invalid characters
     clean_string = re.sub(r'[\\/:*?"<>|\[\]]+', '', input_string)
 
