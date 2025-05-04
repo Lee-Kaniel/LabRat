@@ -6,6 +6,10 @@ from LabRat.src.utils.model_alias_functions import get_fields_without_aliases
 
 
 class SimpleFilter(BaseDataFilter):
+    """
+    A simple filter that removes contractions with any field (except internal or excluded ones) equal to zero.
+    This helps eliminate clearly invalid or improperly parsed entries.
+    """
     @staticmethod
     def filter_contraction(contraction: Contraction) -> bool:
         if any(x == 0 for x in
@@ -14,6 +18,10 @@ class SimpleFilter(BaseDataFilter):
         return False
 
     def filter_overview(self, overview: Overview) -> Overview:
+        """
+        Applies the simple zero-value filter to each contraction in the overview.
+        Marks contractions with invalid data for deletion.
+        """
         for i in range(len(overview.contraction_list)):
             if overview.contraction_list[i].filter_flag != FilterFlag.DELETE:
                 if self.filter_contraction(overview.contraction_list[i]):
